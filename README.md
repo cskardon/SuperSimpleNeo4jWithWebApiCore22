@@ -2,7 +2,9 @@
 
 To run in Linux / Mac etc:
 
+
 ```
+cd ExampleNeo4jMiddleware
 dotnet restore
 dotnet build
 dotnet run
