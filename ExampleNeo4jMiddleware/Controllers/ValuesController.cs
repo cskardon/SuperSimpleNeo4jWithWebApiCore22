@@ -19,7 +19,7 @@
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new[] {"Goto: api/values/<ID> to execute a query"};
+            return new[] {"Goto: api/values/<ID> tooo execute a query"};
         }
 
         // GET api/values/5
@@ -41,6 +41,28 @@
             }
 
             return "Errrrr";
+        }
+
+        //GET api/values/exports
+        [HttpGet("exports/")]
+        public ActionResult<IEnumerable<int>> NameDoesntMatter()
+        {
+            return new[] { 1, 2, 3 };
+        }
+
+        //GET api/values/exports/5
+        [HttpGet("exports/{identifier:int}")]
+        public ActionResult<int> NameReallyDoesntMatter(int identifier) //<-- except in the names, that has to match the {} bit
+        {
+            return identifier;
+        }
+
+
+        //GET exports
+        [HttpGet("/exports/")]
+        public ActionResult<IEnumerable<int>> Exports()
+        {
+            return new[] { 4,5,6 };
         }
     }
 }
